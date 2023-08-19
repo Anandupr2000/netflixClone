@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import Navbar from './components/navbar/Navbar';
+import './App.css'
+import Banner from './components/banner/Banner';
+import RowPoster from './components/rowPost/RowPoster';
+import {originals,action} from './urls'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Navbar/>
+        <Banner/>
+        {/* originals link =  https://api.themoviedb.org/3/discover/tv?api_key=%7BAPI_KEY_HERE%7D&with_networks=213 */}
+        <RowPoster title="Netflix Originals" url={originals}/>
+        <RowPoster title="Action" url={action} isSmall/>
     </div>
   );
 }
